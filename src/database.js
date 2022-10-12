@@ -1,13 +1,12 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
+import { MONGODB_URI } from "./config";
+
 
 (async () => {
-  try{
-    const db = await mongoose.connect("mongodb://127.0.0.1:27017/crud-mongo");
-  console.log("DB connected to", db.connection.name);
-
-}
-  catch(e){
-    console.log(e)
+  try {
+    const db = await mongoose.connect(MONGODB_URI);
+    console.log("DB connected to", db.connection.name);
+  } catch (e) {
+    console.log(e);
   }
 })();
-

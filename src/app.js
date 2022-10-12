@@ -1,4 +1,4 @@
-
+import morgan from "morgan";
 import express from "express";
 import { create } from "express-handlebars";
 import indexRoutes from "./routes/index.routes";
@@ -20,6 +20,13 @@ app.engine(".hbs", hbs.engine)
 
 app.set("view engine", ".hbs")
 
-// Rouutes
+
+// Middlewares
+app.use(morgan("dev"))
+app.use(express.urlencoded({extended: false}))
+// Routes
 app.use(indexRoutes)
+
+//Static Files
+app.use(express.static(path.join(__dirname,"public")))
 export default app
