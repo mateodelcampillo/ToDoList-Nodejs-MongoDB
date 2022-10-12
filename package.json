@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index1.js --exec babel-node",
-    "build": "babel src -d dist && ncp src/views dist/views && ncp src/public dist/public"
+    "dev": "nodemon src/index1.js --exec babel-node",
+    "build": "babel src -d dist && ncp src/views dist/views && ncp src/public dist/public",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "mateodelcampillo",
